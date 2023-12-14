@@ -1,0 +1,702 @@
+---
+title: Nota Técnica  <br>  
+       Seguro Colectivo de Gastos Médicos <br>
+       Bienestar Empresarial   <br>
+
+author: "Martin Quezada"
+date: "Noviembre 2023"
+output: 
+   word_document:
+      reference_docx: estilos.docx
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(ggplot2)
+library(tidyverse)
+library(DT)
+library(flextable)
+library(reticulate)
+```
+
+
+```{python, include=FALSE}
+import pandas as pd
+from datetime import datetime
+import numpy as np
+import scipy.stats as stats
+```
+
+# I.	Características del plan
+
+## 1.	Nombre y Descripción del Plan
+
+Comercializaremos este plan con el nombre de “Bienestar Empresarial”
+
+Ampara los gastos médicos incurridos por los asegurados inscritos en la póliza del seguro, ocasionados por alguna enfermedad, accidente, o embarazo, cubiertos en la póliza, de acuerdo a los límites contratados y hasta por la suma asegurada indicada.
+
+Este producto ofrece cobertura en territorio nacional y en el extranjero solo por emergencia. La suma asegurada, deducible, coaseguro, desembolso máximo por coaseguro, y coberturas se encuentran expresadas en Pesos.
+Los gastos médicos cubiertos derivados por cada enfermedad o accidente cubiertos serán pagados después de aplicar el deducible y coaseguro contratados. La suma asegurada de este producto es por evento por persona y será la contratada en la póliza donde podrán operar diferentes opciones hasta por un monto máximo de $100,000,000 MX,, el coaseguro es desde 0% hasta el 20% con topes variables desde $5,000 MXP hasta sin tope de coaseguro. El deducible es por evento y por asegurado y también se podrán operar distintas opciones de deducible, desde sin deducible.
+Este seguro ofrece dos niveles de servicios, dependiendo si el Asegurado es atendido o no por proveedores afiliados que tienen convenio o contrato por escrito con Prevem Seguros. El Asegurado puede escoger el nivel de servicio que desee al momento de buscar atención médica. Bajo este seguro el Asegurado puede gozar de servicios para una atención médica bajo cualquiera de los dos niveles de servicios: atención médica con Proveedores Afiliados o atención médica con Proveedores que no son Afiliados.
+Servicios con Proveedores Afiliados y Pago Directo. Si el Asegurado se atiende con un proveedor bajo la presente modalidad y Prevem Seguros, S.A. de C.V. coordina el servicio de Pago Directo, la indemnización de los Gastos Médicos Cubiertos será la máxima según las condiciones establecidas en el Contrato. El Asegurado sólo será responsable por el Deducible, Coaseguro y gastos no cubiertos por la póliza. En caso de Emergencia Médica o Urgencia Real, si el Médico u Hospital que le atiende al Asegurado no es un Proveedor Afiliado, los beneficios serán pagados como si fuera un Proveedor Afiliado.
+
+Servicios con Proveedores No Afiliados y Reembolso.  Si el Asegurado no se atiende con un Proveedor Afiliado o presenta gastos cubiertos por un Siniestro vía Reembolso, los servicios serán reducidos según especificado en la carátula de la póliza bajo el término “Coaseguro con Proveedores No Afiliados”, el cual es del 30% y sin límite de tope. Los servicios por honorarios médicos se basarán en el Tabulador de Honorarios Médicos y Quirúrgicos establecido por Prevem Seguros, S.A. de C.V. y sobre dicha base se aplicará el Coaseguro con Proveedores No Afiliados. En caso de gastos hospitalarios se aplicará el Coaseguro con Proveedores No Afiliados. El asegurado será responsable por cualquier monto en exceso de los gastos cubiertos pagados por Prevem Seguros.
+
+
+Servicios con Proveedores No Afiliados y Reembolso.  Si el Asegurado no se atiende con un Proveedor Afiliado o presenta gastos cubiertos por un Siniestro vía Reembolso, los servicios serán reducidos según especificado en la carátula de la póliza bajo el término “Coaseguro con Proveedores No Afiliados”, el cual es del 30% y sin límite de tope. Los servicios por honorarios médicos se basarán en el Tabulador de Honorarios Médicos y Quirúrgicos establecido por Prevem Seguros, S.A. de C.V. y sobre dicha base se aplicará el Coaseguro con Proveedores No Afiliados. En caso de gastos hospitalarios se aplicará el Coaseguro con Proveedores No Afiliados. El asegurado será responsable por cualquier monto en exceso de los gastos cubiertos pagados por Prevem Seguros.
+
+
+## 2.	Operación y Ramo
+El Seguro de Gastos Médicos Mayores se registrará en la Operación de Accidentes y Enfermedades en el Ramo de Gastos Médicos Mayores. (En términos de la Ley de Instituciones de Seguros y de Fianzas).
+
+## 3.	Objeto del Seguro
+El objeto de este seguro es pagar los Gastos Médicos Cubiertos en que haya incurrido el Asegurado en territorio nacional como resultado de una Enfermedad Cubierta, Accidente Ocurrido o Embarazo Cubierto y originado durante la vigencia de la póliza. Los Gastos Médicos Cubiertos serán pagados de acuerdo con los límites y condiciones establecidos en la carátula de la póliza así como en las condiciones generales y endosos de la misma.
+
+## 4.	Gastos Médicos Cubiertos
+Los gastos médicos cubiertos son:
+
+### 1. Hospitalización
+a)	Habitación privada en cuarto estándar con alimentos, exceptuándose Emergencias Médicas en el Extranjero en las que sólo se cubre una habitación semi-privada
+b)	Cama extra para un acompañante del Asegurado, exceptuándose Emergencias Médicas en el Extranjero
+c)	Sala de operaciones, de terapia intensiva, intermedia, unidad de cuidados coronarios, de recuperación o de curaciones
+d)	Sala o cuarto de emergencia dentro de las 72 horas después de haber ocurrido un Accidente o Emergencia Médica
+e)	Gastos originados por consumo de oxígeno, aplicación de soluciones intravenosas e inyecciones, transfusiones de sangre, aplicación de plasma o sueros, hemodiálisis y otras substancias semejantes indispensables para el tratamiento de una Enfermedad o Accidente cubiertos, así como las pruebas de compatibilidad que correspondan al número de donaciones que reciba el Asegurado
+
+### 2. Honorarios Médicos
+a) Honorarios médicos
+Los honorarios médicos y quirúrgicos de cirujanos, anestesiólogos, ayudantes y cualquier otro médico especialista interconsultante y justificado.
+Los montos máximos se calculan de la siguiente manera:
+1)	Honorarios médicos y quirúrgicos de cirujanos el 100% del monto máximo establecido por el procedimiento correspondiente en el Tabulador de Honorarios Médicos y Quirúrgicos
+2)	Anestesiólogos con un límite máximo de hasta un 30 %, referenciado a los honorarios del cirujano
+3)	Primer ayudante, cuyos servicios son Médicamente Necesarios y en caso de ser justificado por el tipo de procedimiento efectuado, con un límite máximo del 20% referenciado a los honorarios del cirujano
+4)	Segundo ayudante cuando sea Médicamente Necesario y en caso de ser justificado por el tipo de procedimiento efectuado, con un límite máximo de hasta 10% de los honorarios del cirujano
+Para honorarios médicos y quirúrgicos incurridos como consecuencia de una Emergencia Médica en el Extranjero, se cubre con base en el Gasto Usual, Razonable y Acostumbrado, aplicando el deducible y suma asegurada estipulados en la carátula de la póliza para la cobertura de Emergencia Médica en el Extranjero.
+b)	Honorarios de enfermeras de cuidados especiales legalmente autorizadas para ejercer su profesión, siempre y cuando dichos cuidados especiales sean prescritos por el médico tratante, sean necesarios para la convalecencia domiciliaria del Asegurado, y en base al Tabulador de Honorarios Médicos y Quirúrgicos y por turnos de 8, 12 y 24 horas por 30 días con límite máximo de 720 horas.
+c)	La primera consulta médica post-operatoria se considerará incluida dentro de los honorarios médicos de la intervención quirúrgica.
+d)	Visitas y consultas médicas en el hospital, consultorio o en el domicilio del Asegurado siempre que sean indicadas por el médico tratante.
+
+###	3. Medicamentos
+Medicamentos consumidos por el Asegurado en el hospital y los adquiridos fuera de él, siempre que sean prescritos por los médicos tratantes, se relacionen con el padecimiento cubierto y estén autorizados por las autoridades sanitarias competentes. Se deberá presentar la factura de la farmacia con requisitos fiscales a nombre del asegurado o del asegurado titular y anexar la receta médica correspondiente.
+
+Por este conceptoel pago máximo, es el minimo entre la suma asegurada y un millon de dolares
+
+### 4. Servicios auxiliares de diagnóstico
+a)	Exámenes de diagnóstico de laboratorio, gabinete e imagenología, incluyendo diagnóstico de Rayos X, electrocardiogramas, isótopos radioactivos, electroencefalogramas o de cualesquiera otros indispensables para el diagnóstico, tratamiento de un Accidente o Enfermedad cubiertos. Estos servicios se cubrirán siempre y cuando exista un diagnóstico médico cubierto y hasta él alta médica
+b)	Exámenes de alergias prescritos por el médico tratante por escrito, con un diagnóstico definitivo
+
+###	5. Renta de Equipo de Hospital
+La renta de equipo y suministros médicos, así como la atención especializada que sea indispensable para el cuidado médico en el domicilio del Asegurado, siempre y cuando sea Medicamente Necesario y sea prescrito por el Médico Tratante.
+
+### 6. Terapia y rehabilitación
+a)	Terapia radioactiva y quimioterapia, fisioterapia y otros semejantes que sean Medicamente Necesarios para el diagnóstico o tratamiento de Accidente ó Enfermedad Cubierta por esta póliza, siempre y cuando sean prescritos por el médico tratante y no sean de tipo experimental o en fase de investigación
+b)	Hidroterapia e Inhaloterapia siempre que sean Médicamente Necesarios para el tratamiento de un Accidente o Enfermedad Cubierta y que sean prescritos por el médico tratante
+
+### 7. Servicio de ambulancia
+a)	Servicio de ambulancia de traslado terrestre dentro del territorio nacional por cualquier emergencia médica cubierta y facilidades quirúrgicas ambulatorias. Se cubren traslados no urgentes del domicilio al centro de atención y traslados del hospital al domicilio sólo si son médicamente necesarios previa autorización por escrito de Prevem Seguros.
+b)	Ambulancia aérea y cuidados médicos para traslado al hospital más cercano dentro del territorio nacional por motivo de una Emergencia Médica producida por una Enfermedad o Accidente Cubierto y cuando no se cuente con los recursos médicos ni hospitalarios para la atención en el lugar donde se presentó dicha urgencia.
+El límite máximo por este beneficio será el indicado en la carátula de la póliza, por año-contrato para cada Asegurado, aplicando invariablemente un coaseguro del 10% aun utilizando los Proveedores Afiliados y, siempre y cuando se cumpla con lo siguiente:
+1.	La transportación se realice en un avión legalmente autorizado, que cuenta con el equipo e instrumentos médicos especiales a bordo, cuya tripulación es especializada en transportes médicos y cuyo operador es una compañía legalmente reconocida como operador de ambulancias aéreas
+2.	El Asegurado muestre síntomas de Enfermedades o Accidentes cubiertos bajo el contrato
+3.	La condición médica del Asegurado no le permita viajar en una aerolínea regular de pasajeros
+
+### 8. Maternidad
+Gastos por maternidad limitado a Parto Normal u operación Cesárea hasta el límite máximo establecido en la carátula de la pólizade $31,000 MXP por Asegurado por evento. En ambos casos, aplica un periodo de espera de 10 meses con Prevem Seguros y no aplica Deducible ni Coaseguro. Serán elegibles para esta cobertura aquellas mujeres titulares, cónyuge o concubinas del titular entre los 18 y 44 años de edad, que son Aseguradas bajo este Contrato, de acuerdo a la definición de Colectividad asegurada, y que cumplan con el periodo de espera establecido para esta cobertura.
+EXCLUSIONES ESPECÍFICAS PARA MATERNIDAD
+1.-	Afecciones propias del embarazo y del parto (como por ejemplo, sangrados por vía vaginal, reposos prescritos por el médico durante el período de gestación o la sintomatología propia y tradicional del embarazo), abortos y toda complicación del embarazo, parto o puerperio que no se encuentren entre las cubiertas por esta póliza
+2.-	Legrado uterino cualquiera que sea su causa, con excepción del involuntario certificado por el médico tratante y que no sea complicación de una exclusión contenida en la póliza
+3.-	Todos los gastos de un embarazo a consecuencia de un tratamiento de infertilidad y/o esterilidad, así como sus complicaciones
+
+### 9. Complicaciones del Embarazo
+Gastos originados de las siguientes complicaciones del embarazo y parto de la asegurada titular, cónyuge ó concubina de acuerdo a la definición de Colectividad asegurada, de acuerdo al Tabulador de Honorarios Médicos y Quirúrgicos y después de transcurridos 10 meses de espera con Prevem Seguros y sujetos a la Suma Asegurada del Contrato estipulada en la carátula de la Póliza.
+•	Las intervenciones quirúrgicas realizadas con motivo de embarazos extrauterinos
+•	Mola hidatiforme (embarazo molar)
+•	Placenta previa
+•	Placenta acreta
+•	Atonia uterina
+•	Preeclampsia
+•	Eclampsia
+•	Descompensación cardiaca
+•	Toxemia gravídica
+•	Embarazo ectópico
+•	Legrado o Aborto Involuntario que requiera de intervención médica para ser completado debido a que el feto ha muerto y es retenido en el útero por cuatro (4) semanas o más
+•	Terminación espontánea del embarazo ocurrido en un período de gestación en el cual no es posible el nacimiento de un ser humano apto de continuar con vida
+•	Síndrome de Hellp
+
+### 10.  Atención Recién Nacidos y Síndromes, Enfermedades, Malformaciones o Defectos Físicos Congénitos
+Son todos aquellos Gastos Médicos Cubiertos, hasta el límite de  $1,050,000 MXP, por atención al recién nacido, siempre y cuando la madre titular, cónyuge o concubina haya estado asegurada con Prevem Seguros durante 10 meses y no aplique una causa de exclusión:
+•	Los gastos de cunero
+•	Consultas pediátricas e incubadora
+•	Los gastos relacionados con un parto prematuro
+•	Los gastos incurridos mientras permanezca internado como consecuencia directa de su nacimiento
+Asimismo, se ampararán los Síndromes, Enfermedades, Malformaciones o Defectos Físicos Congénitos, a los recién nacidos que hayan nacido de madres cuyo parto o cesárea haya sido cubierto por este Contrato, inscritos en éste dentro de los treinta (30) días siguientes a la fecha del nacimiento y no aplique una causa de exclusión.
+El límite de $1,050,000 MXP para esta cobertura, aplicará a cada recién nacido en caso de un parto múltiple y a cualquier Enfermedad que padezca el recién nacido y se limitará a los primeros sesenta (60) días de vida. Después de los primeros sesenta (60) días de vida, la responsabilidad máxima de Prevem Seguros será la Suma Asegurada especificada en la carátula de la póliza (y/o sus anexos) para la cobertura básica.
+EXCLUSIONES ESPECÍFICAS PARA ATENCIÓN A RECIÉN NACIDOS
+1.	Se excluyen Síndromes, Enfermedades, Malformaciones o Defectos Físicos Congénitos y/o prematuros, originados por alcoholismo, drogadicción, toxicomanías o medicamentos no prescritos por el médico tratante o tratamientos de infertilidad y/o esterilidad de los padres del menor Asegurado
+2.	Padecimientos o complicaciones que presente el recién nacido originados por alguna actividad u otra enfermedad excluida para la madre asegurada
+
+### 11. Síndromes, Enfermedades, Malformaciones o Defectos Físicos Congénitos de Asegurados No Nacidos durante la vigencia de la póliza
+Se cubren, siempre y cuando se cumplan las siguientes condiciones y los periodos de espera señalados:
+a.	Cuando se manifiesten después de la edad de cinco años
+b.	No se hayan presentado signos ni síntomas, ni realizado diagnóstico médico a la fecha de inicio de la póliza
+c.	El primer gasto por esta enfermedad ocurra en la vigencia de esta póliza
+### 12. Gastos por accidente
+También se considera Accidente Cubierto lo siguiente, aplicando el deducible y coaseguro estipulado en la carátula de la póliza. Si el monto de gastos médicos cubiertos es superior al deducible contratado y la atención médica es con Proveedores Afiliados, se elimina el deducible.
+a)	Cuando ocurran por el uso de motocicletas, siempre y cuando éstos se usen como medio de transporte para el desempeño de su trabajo y el Accidente ocurra en días y horas laborables
+b)	Cuando el Asegurado sufra lesiones bajo el influjo de bebidas alcohólicas siempre y cuando éste no sea el causante directo del Accidente y esto haya sido determinado por el Ministerio Público
+c)	Los gastos médicos a consecuencia de asalto como Accidente, siempre y cuando el Asegurado no sea el asaltante y se acompañe del acta del Ministerio Público
+d)	Los tratamientos dentales, alveolares o gingivales o maxilofaciales, que sean indispensables a consecuencia de un Accidente Cubierto por la póliza (excepto reposición de prótesis existentes a la fecha del accidente), siempre y cuando el primer gasto se realice dentro de los primeros treinta (30) días posteriores al accidente
+e)	Los gastos médicos a consecuencia de la alteración de la salud por asfixia o por aspiración involuntaria de gases o vapores letales
+f)	Los gastos médicos a consecuencia de la alteración de la salud por electrocución involuntaria
+g)	Los gastos médicos a consecuencia de envenenamiento por ingestión involuntaria de sustancias tóxicas, medicamentos o alimentos
+
+### 13. Cirugías reconstructivas, no estéticas
+Tratamientos médicos o quirúrgicos de carácter reconstructivo, no estético, que resulten indispensables a consecuencia de un Accidente o Enfermedad cubierto.
+
+### 14. Estrabismo
+Tratamiento médico o quirúrgico para corregir el estrabismo de los Asegurados nacidos dentro de la vigencia de la póliza, siempre y cuando la madre asegurada tenga diez (10) meses de cobertura con Prevem Seguros, a la fecha del nacimiento del Asegurado.
+
+### 15. Cirugía de nariz y/o senos paranasales por enfermedad
+Los tratamientos médicos ó quirúrgicos de nariz y/o senos paranasales que se deriven de cualquier Enfermedad Cubierta se cubren hasta la Suma Asegurada, Deducible y Coaseguro estipulado en la carátula de la póliza, siempre y cuando el Asegurado tenga al menos dos (2) años de cobertura ininterrumpida en la póliza con Prevem Seguros.
+Los Padecimientos de nariz y/o senos paranasales que resulten a consecuencia de un Accidente Cubierto, no están sujetos al Periodo de Espera señalado en el párrafo anterior, siempre y cuando se informe dentro de los primeros treinta (30) días de ocurrido el suceso a Prevem Seguros, S.A. de C.V., para que sea valorado y atendido por un Médico otorrinolaringólogo que pertenezca a los Proveedores Afiliados con Prevem Seguros. En caso de no cumplir con lo anterior se tomará el Padecimiento como Enfermedad y se tratará como se estipula en el primer párrafo, aplicando el Periodo de Espera correspondiente.
+
+### 16. Compra o renta de aparatos ortopédicos y prótesis
+Siempre que se requieran a consecuencia de un Accidente o Enfermedad Cubierta, ocurrido durante la vigencia de la póliza, de acuerdo a lo establecido en la carátula de la póliza.
+
+### 17. Virus de la Inmunodeficiencia humana (VIH)
+Gastos Médicos a consecuencia de tratamientos médicos indicados para el control de la infección por el virus de la inmunodeficiencia humana (VIH) hasta el límite máximo de $1,000,000 MXP, con periodo de espera de cinco (5) años continuos e ininterrumpidos con Prevem Seguros, siempre y cuando las primeras manifestaciones, diagnósticos o gastos no ocurran durante el periodo de espera estipulado ya que de presentarse durante el mismo éste padecimiento será considerado como exclusión.
+
+### 18. Trasplante de órganos y tejido
+Para efectos de esta cobertura se establecen las siguientes definiciones:
+
+a. Centro de trasplante
+Es un Hospital o institución que satisface los siguientes requerimientos, los cuales incluyen pero no limitan a que el centro de trasplante:
+
+a)	Proporcione servicios completos de trasplantes, incluyendo, pero sin estar limitados a tener:
+•	La capacidad para proporcionar un tratamiento continuado
+•	Una satisfactoria experiencia en procedimientos de trasplantes
+b)	Que sus cirujanos tengan un mínimo de 2 años con la certificación en la rama de trasplantes.
+
+b. Donante
+Es aquella persona que sufre una operación quirúrgica con el propósito de donar órgano(s) legalmente de su cuerpo para una cirugía de trasplante.
+
+c. Órgano
+Significa una parte del cuerpo humano, la cual realiza una función específica.
+
+d. Receptor
+Significa un Asegurado que se realiza una operación quirúrgica para recibir un trasplante.
+
+e. Trasplante
+Significa el procedimiento médicamente necesario, efectuado mientras  el seguro este vigente, y durante el cual:
+
+a)	Uno o más de un órgano de un donante (vivo o fallecido), es transferido quirúrgicamente a un Asegurado, el cual es el receptor.
+b)	Tejido proveniente de (1) Donante (vivo o fallecido); o (2) el mismo Asegurado, es transferido quirúrgicamente a un Asegurado ó a un área corporal diferente del mismo Asegurado.
+
+Condiciones Específicas para Trasplantes
+
+Se cubre el trasplante de órganos, de acuerdo a las siguientes condiciones específicas, hasta el límite máximo estipulado de $1,000,000 MXP por Asegurado.
+
+Todos los servicios de trasplantes, incluyendo los médicos, los procedimientos, y las entidades donde se efectúan los trasplantes, requerirán aviso y la autorización previa y por escrito de Prevem Seguros, S.A. de C.V. para lo cual el Asegurado, o cualquier otra persona actuando en su nombre, estará obligado a ponerse en contacto con Prevem Seguros, inmediatamente después de haber sido identificado por su Médico como candidato para un trasplante.
+El Asegurado debe obtener una primera y segunda opinión de un médico especialista en el ramo de la medicina correspondiente. Prevem Seguros se reserva el derecho de obtener una tercera opinión de un Médico o entidad médica. Ningún beneficio será pagadero por servicios prestados por, o en relación con, un procedimiento de Trasplante que no sea considerado como Medicamente Necesario.
+Los gastos médicos cubiertos incurridos por trasplantes, incluyen, sin estar limitados, a los gastos Médicamente Necesarios por los tratamientos, servicios y/o suministros requeridos por o en relación con un trasplante cubierto bajo las condiciones generales:
+a.	Servicios médicos
+b.	Internamiento en un hospital o centro de trasplante
+c.	Obtención de órganos
+d.	Medicinas proporcionadas durante una Hospitalización, o suministros para usar en la casa
+e.	Evaluación de pacientes ambulatorios
+f.	Cuidados postoperatorios
+g.	Gastos del donante, hasta un máximo de $100,000 moneda nacional
+Se pagarán beneficios hasta dos (2) trasplantes de por vida para cada Asegurado, un trasplante de dos órganos realizado durante la misma sesión de cirugía será considerado como un sólo trasplante. Los beneficios por un procedimiento de re-trasplante (un segundo trasplante que se efectúa a continuación de un trasplante inicial que fracasó), será pagado solamente si Prevem Seguros lo considera que es Medicamente Necesario.
+En caso de un donante vivo, se consideran gastos cubiertos, los gastos médicos en que incurra el donante durante el acto quirúrgico de donación excluyendo cualquier gratificación o remuneración que él mismo reciba.
+Exclusiones específicas para trasplantes.
+En relación con los procedimientos de trasplantes no se pagarán beneficios por cualquier tratamiento, procedimiento, servicio, cirugía, o artículo:
+1. Que no haya sido aprobado previamente por escrito por Prevem Seguros, S.A. de C.V., o proporcionado como resultado de, o en cualquier forma relacionada con un trasplante que no esté específicamente nombrado como un trasplante cubierto bajo la póliza
+2. Proporcionado por o en relación con una condición preexistente o de naturaleza experimental o de investigación o electivo
+3. Cuando esté disponible cualquier tratamiento o procedimiento alternativo, igualmente efectivo para el tratamiento de la condición o Enfermedad del Asegurado
+4. Proporcionado por, o como resultado de un trasplante en el cual se provee al receptor con cualquier órgano animal, o equipos o artefactos mecánicos o artificiales designados para reemplazar órganos humanos
+5. Proporcionado por, o en relación con un segundo procedimiento de trasplante que se lleve a cabo después de haberse realizado un primer trasplante efectuado con anterioridad a la fecha efectiva de la cobertura y el cual ha fracasado
+
+### 19. Emergencia Médica en el Extranjero
+Esta cobertura cubre los gastos médicos erogados dentro de la vigencia de la póliza por causa de una Emergencia Médica cubierta fuera de la República Mexicana. Para efectos de esta cobertura, el Asegurado Titular y sus Asegurados Dependientes deberán presentar una Emergencia Médica tal y como se define en el contrato y ajustarse a los términos y condiciones siguientes:
+1. La suma asegurada máxima será por asegurado por año póliza y es de 50,000 USD para esta cobertura
+2. El asegurado tendrá a su cargo un deducible de 50 USD para esta cobertura
+3. Para el pago de la reclamación, Prevem Seguros siempre se basará en el gasto usual, razonable y acostumbrado del país donde se atiende la Emergencia Médica
+4. Prevem Seguros, S.A. de C.V. pagará la indemnización en moneda nacional al tipo de cambio a la venta estipulado por el Banco de México en el Diario Oficial de la Federación, para esa moneda y considerando como fecha aquélla en que se haya erogado el gasto
+Se considerarán terminados los beneficios de esta cobertura, una vez que se estabilice y controle la condición de Emergencia Médica del asegurado, al expedirse el alta del servicio de urgencias o de hospitalización únicamente por la causa que da origen, hasta el término de vigencia de la póliza o hasta que se agote la suma asegurada de esta cobertura, lo que ocurra primero.
+Exclusiones Específicas para la Cobertura de Emergencia Médica en el Extranjero
+•	Complicaciones del embarazo, parto, operación cesárea y gastos del recién nacido
+•	Parto o cesárea, cualquiera que sea su causa o complicación
+•	Tratamientos de rehabilitación
+•	Estudio o cirugías previamente programadas
+•	Estudios de cualquier tipo, medicamentos e intervenciones quirúrgicas programadas dos (2) días después de atendida la Emergencia Médica, exceptuando la que sean consecuencia directa de la misma y cuya omisión ponga en peligro la vida del asegurado
+•	No se pagarán gastos originados por ninguna condición pre-existente al inicio del viaje al extranjero
+•	Estancia en el extranjero superior a noventa (90) días
+•	Las exclusiones o limitaciones que se encuentran señaladas en endosos y las condiciones generales de la póliza
+•	Servicio de enfermera fuera del hospital
+
+Cobertura Adicional
+Indemnización Diaria por Hospitalización
+En caso de la hospitalización en territorio nacional del Asegurado a causa de un Accidente Cubierto ó Enfermedad Cubierta que le ocurra durante la vigencia de la póliza, Prevem Seguros, una vez transcurrido los días de espera, pagará la indemnización diaria por Hospitalización contratada para esta cobertura estipulada en la carátula de la póliza, por el tiempo que dura la Hospitalización y hasta el Periodo Máximo de Hospitalización estipulado en la carátula de la póliza.
+Días de Espera.- Para esta cobertura operan los días de espera estipulados en la carátula de la póliza; es decir la indemnización diaria se pagará a partir del día siguiente.
+Periodo Máximo de Hospitalización.- Prevem Seguros, pagará  la indemnización diaria por Hospitalización estipulada en la carátula de la póliza por cada Hospitalización de un Asegurado a causa de un Accidente cubierto o Enfermedad cubierta, hasta el Periodo Máximo de Hospitalización, estipulado en la carátula de la póliza, el cual comienza a partir del primer día de Hospitalización del Asegurado.
+Hospitalizaciones Sucesivas.- En caso de incurrir en hospitalizaciones sucesivas, a causa de un mismo Accidente o Enfermedad Cubiertos, separadas por intervalos no mayores de 12 meses, cada periodo de Hospitalización será considerado como continuación del anterior a efecto de aplicar el periodo máximo de Beneficio estipulado en la carátula de la póliza y para cada caso deberá transcurrir los días de espera estipulados en la carátula de la póliza.
+La indemnización se pagará siempre y cuando la póliza se encuentre vigente al ocurrir el Accidente o la Enfermedad Cubiertos.
+
+
+Servicios Asistenciales
+Dental Prevem Plus
+Esta cobertura será otorgada por Prevem Seguros y  los servicios serán prestados a través de la compañía denominada Dentegra Seguros Dentales S.A. y con la cual Prevem Seguros ha celebrado un contrato para pago directo.
+Tratamientos Dentales:
+Prevem Seguros cubrirá los gastos dentales del asegurado a consecuencia de las siguientes enfermedades: caries, infecciones e inflamaciones bucales, gingivitis, falta de función por enfermedad y fracturas de dientes; siempre y cuando el tratamiento esté cubierto bajo la póliza. 
+Prevem Seguros anexará a la póliza un folleto con los servicios prestados por la Compañía mencionada, en donde el asegurado podrá consultar: 
+-	Los tratamientos cubiertos mencionados.
+-	Los pasos para que los servicios sean otorgados para lo cual el Asegurado deberá mostrar la tarjeta de identificación vigente como asegurado del producto Bienestar Empresarial de Prevem Seguros, acompañada de una identificación oficial con fotografía.
+-	Las exclusiones y limitaciones de los servicios.
+Los servicios tienen un límite anual de $120,000.00 (Ciento veinte mil pesos M.N.) y un copago a cargo del asegurado del 20% sobre el costo total de sus gastos de tratamientos cubiertos.
+
+
+Exclusiones de Dental Prevem Plus
+Esta cobertura en ningún caso cubre procedimientos dentales que no sean los especificados en esta póliza, ni tampoco los gastos indicados como Exclusiones ambos descritos en el folleto de los servicios prestados por la Compañía Dentegra Seguros Dentales S.A.
+
+Dental Prevem Premium
+La contratación de esta cobertura es de manera opcional y debe venir especificada en la Carátula de la Póliza.
+Mediante la contratación de esta cobertura se amplían los beneficios de la cobertura Dental Prevem Plus señalada en el punto anterior. Los tratamientos se explican en el folleto anexo a la Póliza, quedando un límite anual de ciento veinte mil pesos M.N. ($120,000.00 M.N) y un copago a cargo del asegurado de veinte porciento (20%) sobre el costo total de sus gastos de tratamientos cubiertos.
+
+Servicios de Asistencia en Viaje
+Esta es una cobertura de asistencia que consiste en:
+Esta cobertura y sus servicios, serán otorgados por Prevem Seguros, a través de la Compañía Articuladora de Servicios de Asistencia en Viaje que aparece en relación anexa a la póliza y con la cual Prevem Seguros ha celebrado un contrato de prestación de servicios.
+1.	Extensión de la Cobertura:
+Ámbito territorial:
+El servicio se extenderá a todo el mundo, a partir de los cien (100) kilómetros desde la Residencia Permanente del Asegurado en la República Mexicana.
+Disponibilidad:
+El Prestador se compromete a tener el servicio de Asistencia en Viaje disponible en forma permanente, todos los días del año, durante las (veinticuatro (24) horas del día, incluyendo días feriados y días inhábiles.
+Plazo de cobertura:
+Los primeros sesenta (60) días corridos del inicio del viaje. A la finalización de ese plazo, no será válida cualquier solicitud de asistencia que se realice y cesarán todos los servicios de Asistencia en Viaje, salvo los ya iniciados o en curso. El Prestador podrá requerir al asegurado que acredite encontrarse dentro del plazo de cobertura, mediante la presentación al Prestador de la documentación pertinente.
+2.	Asistencia en Viaje Relativa a las Personas
+Las asistencias relativas a las personas son las indicadas en este artículo y se harán efectivas de acuerdo con las condiciones establecidas a continuación:
+a)	Repatriación o traslado médico en caso de accidente o enfermedad.
+En caso de que un Asegurado sufra Enfermedad o Accidente ocurridos después del inicio del viaje o durante el transcurso del mismo, y si el equipo médico del Prestador en coordinación con el médico que atiende al Asegurado, recomienden la hospitalización. El Prestador pagará los gastos de traslado del Asegurado, en el medio más adecuado (incluyéndose en caso de ser necesario por razones médicas, ambulancia aérea, avión de línea regular o ambulancia de terapia intensiva, media o estándar) hasta un Centro Hospitalario más cercano y adecuado o hasta su domicilio habitual. El equipo médico del Prestador mantendrá permanente contacto con el centro hospitalario o médico que atienda al Asegurado para obtener las informaciones del caso y coordinar los servicios necesarios para su traslado.
+b)	Gastos por traslado y hospedaje de un familiar del Asegurado en el exterior.
+En caso de que la hospitalización del Asegurado a consecuencia de Accidente o Enfermedad ocurridos después del inicio del viaje o durante el transcurso del mismo y de que la hospitalización  fuese superior a 5 (cinco) días y éste se encontrara sin un acompañante idóneo para atenderlo, vinculado por parentesco en primer grado de consanguinidad o sin su cónyuge, el Prestador pagará a un familiar designado por el Asegurado los siguientes gastos:
+a) El importe del viaje de ida y vuelta al lugar de hospitalización; y,
+b) Los gastos de hotel (alojamiento sin pensión y sin extras), hasta un límite diario de ciento cincuenta dólares estadounidenses (u$s 150), con el tope máximo de setecientos dólares estadounidenses (u$s 700).
+c)	Asistencia médica por accidente o enfermedad del asegurado en el extranjero.
+En caso de accidente o enfermedad del Asegurado fuera de la República Mexicana, el Prestador sufragará los gastos de hospitalización, intervenciones quirúrgicas, honorarios médicos y productos farmacéuticos prescritos por el proveedor médico designado por el Prestador.
+El Prestador se hará cargo de los gastos por todos los conceptos correspondientes a esta prestación y por viaje, hasta un límite máximo por asegurado de Cinco mil dólares estadounidenses (u$s 5.000).
+d)	Asistencia médica por accidente o enfermedad del Asegurado en la República Mexicana.
+En caso de enfermedad del Asegurado en la República Mexicana, el Prestador sufragará los gastos de hospitalización, intervenciones quirúrgicas, honorarios médicos y productos farmacéuticos prescritos por el proveedor médico designado por el Prestador.
+El Prestador se hará cargo de los gastos por todos los conceptos correspondientes a esta prestación y por viaje, hasta un límite máximo por asegurado de seiscientos dólares estadounidenses (u$S 600). En caso de accidente, el límite máximo por asegurado será de cinco mil dólares estadounidenses (u$s 5.000).
+e)	Prolongación de la estancia del asegurado en el extranjero por convalecencia 
+El Prestador se hará cargo de los gastos de hotel (alojamiento sin pensión y sin extras) del asegurado, cuando por accidente o enfermedad y por prescripción del equipo médico del Prestador, necesite prolongar su estancia en el extranjero para su asistencia médica. Dichos gastos tendrán un límite diario de cien dólares estadounidenses (u$s100), con el tope máximo de setecientos dólares estadounidenses (u$s 700) por toda la estancia.
+f)	Repatriación del asegurado en caso de fallecimiento
+En caso de fallecimiento del Asegurado, el Prestador efectuará los trámites necesarios para la repatriación del cadáver y asumirá los gastos de traslado para su inhumación en la República Mexicana
+g)	Cuidado, transporte o repatriación de los asegurados acompañantes.
+Cuando por motivo de accidente, fallecimiento o enfermedad de uno de los Asegurados impida la continuación del viaje, el Prestador se hará cargo de los gastos por  cuidado y de traslado de los Asegurados acompañantes  si alguna de dichas personas fuera un hijo menor de doce (12) años del asegurado hospitalizado, trasladado o repatriado, siempre que no tuviera quien lo acompañase. A tal efecto, el Prestador proporcionará la persona adecuada para que le atienda durante el viaje hasta su domicilio o lugar de hospitalización.
+El límite máximo de cuidado será de hasta cien dólares estadounidenses (u$s 100.) por asegurado y hasta tres (3) días de cuidado, no estableciéndose límite para su viaje hasta el domicilio del asegurado
+h)	Gastos de medicamentos ambulatorios.
+Se cubrirán los gastos de medicamentos en ambulatorio, siempre que hayan sido prescritos por un médico a partir de una solicitud de asistencia, hasta los siguientes topes: 
+En la República Mexicana hasta un tope de trescientos dólares estadounidenses (u$s 300).
+En el Extranjero hasta un tope de quinientos dólares estadounidenses (u$s 500).
+i)	Atención odontológica de urgencia en el extranjero.
+Se brindará el servicio odontológico de urgencia que requiera el Asegurado, limitado al tratamiento del dolor, infección y extracción de la pieza dental afectada, hasta un máximo de quinientos dólares estadounidenses (u$s 500).
+j)	Localización y envió de medicamentos fuera de La República Mexicana 
+El Prestador se encargará de la localización y, en su caso, del envío de los medicamentos indispensables, de uso habitual del Asegurado, siempre que no sea posible obtenerlos localmente o sustituirlos por otros equivalentes. Estarán a cargo del Asegurado los importes correspondientes al precio del medicamento y los gastos, impuestos y derechos de aduana relativos a su obtención.
+El Equipo Médico del Prestador determinará la equivalencia o no de un medicamento similar en el país donde se encuentra el Asegurado. En caso que la obtención del medicamento o su similar, requiera prescripción o receta emitida por un médico local, el Prestador organizará la consulta a tal efecto, quedando a cargo del Asegurado pagar el costo de la consulta misma.
+k)	Garantía de Regreso.
+La Empresa reembolsará eventuales mayores costos de pasajes por cambio de fecha de viaje de regreso, siempre y cuando sea a consecuencia de enfermedad o accidente cubiertos
+l)	Traslados.
+El Prestador se hará cargo de los gastos de traslado previstos en el inciso a) del presente artículo, siempre que no puedan efectuarse en el medio de transporte contratado para el viaje. El asegurado transportado cederá al Prestador el/los boletos de pasaje que no sea/n utilizado/s para su regreso.
+
+
+3.	Exclusiones de las Asistencias en Viaje
+Quedan expresamente excluidos del Servicio de Asistencia en Viaje, los servicios, hechos y reintegros siguientes:
+1.	Los servicios que el Asegurado haya concertado por su cuenta, sin la previa comunicación o sin consentimiento del Prestador, salvo en caso de fuerza mayor o de urgente necesidad, siempre que le comunique al Prestador dentro de las 24 (veinticuatro) horas de ocurrido el siniestro.
+2.	Las enfermedades o accidentes derivadas de padecimientos crónicos y/o preexistentes a la iniciación del viaje, así como sus consecuencias y agudizaciones, conocidas o no por el Asegurado. Las mismas serán determinadas por el departamento médico del Prestador. En todos los casos el prestador brindará la primer consulta de urgencia para determinar la preexistencia. Se entiende por enfermedad no preexistente, toda aquella repentina e inesperada, sin sintomatología previa o con estudio anterior negativo. Tales caracteres serán determinados según los criterios del equipo médico del Prestador. Asimismo, quedan excluidos los tratamientos oncológicos y sus consecuencias y el tratamiento de hipertensión arterial, del asma, diabetes, excepto los casos en que el paciente sufra una descompensación aguda.
+3.	Los tratamientos homeopáticos, de acupuntura, de kinesioterapia, de curas termales y cualquier otro que implique la utilización de métodos no convencionales, así como los agravamientos de enfermedades o lesiones derivados del incumplimiento por parte del Asegurado de las prescripciones o tratamiento dispuestos por el equipo médico del Prestador, quien a partir de ese momento se deslinda de toda responsabilidad por cualquier contingencia, daño o perjuicio en la salud del asegurado, finalizando la cobertura en la asistencia por dicha patología.
+4.	Enfermedades mentales y trastornos psíquicos; parto y estado de embarazo (salvo la urgencia cuando se trate de una complicación clara e imprevisible y en ningún caso a partir del sexto mes de embarazo); las recaídas y convalecencias de toda afección anterior a la fecha del viaje.
+5.	El suicidio y las enfermedades o accidentes derivadas de: intento de suicidio y sus consecuencias; la acción criminal del asegurado, sea en forma directa o indirecta; la ingestión de drogas, narcóticos, bebidas alcohólicas o medicinas tomadas sin orden médica; y el SIDA.
+6.	Las enfermedades o accidentes resultantes de tratamientos hechos por profesionales no pertenecientes a equipos médicos del Prestador y los gastos originados por visitas médicas de control no autorizadas por el prestador.
+7.	La asistencia derivada de prácticas deportivas profesionales y deportes invernales practicados fuera de pistas reglamentarias.
+8.	Erogaciones por compras, modificación, arreglo y reconstrucción de prótesis y órtesis de todo tipo, artículos de ortopedia, audífonos, lentes de contacto, anteojos, férulas, muletas, nebulizadores, marcapasos y cualquier otro medio mecánico de apoyo terapéutico. Asimismo quedan excluidas las intervenciones quirúrgicas para colocación de los artículos mencionados, salvo en caso que la intervención sea a consecuencia de lesiones por accidente. 
+9.	Gastos de alimentación, no previstos expresamente y cualquier otro gasto no autorizado en forma expresa por el Prestador.
+
+
+
+## 5.	Exclusiones Generales
+
+El Contrato en ningún caso cubre los gastos médicos que se originen a consecuencia de:
+
+<div custom-style="Párrafo de lista">
+1.	Enfermedades preexistentes
+2.	Cualquier gasto que no sea Médicamente Necesario
+3.	Lesiones que se produzcan por la participación en una guerra, motín, rebelión o cualquier acto de insurrección civil o militar
+4.	Lesiones o enfermedades provocadas por radiación, reacción atómica o contaminación radioactiva y sus complicaciones, salvo las derivadas del tratamiento de una Enfermedad o Accidente Cubierto
+5.	Lesiones que se produzcan a consecuencia de delitos intencionales de los que sea responsable el Asegurado Titular o cualquiera de los Asegurados Dependientes
+6.	Cualquier cuidado o tratamiento y sus complicaciones debido a lesiones auto infligidas, intento de suicidio o suicidio
+7.	Accidentes sufridos mientras el Asegurado Titular o cualquiera de los Asegurados Dependientes participe como piloto, copiloto, ayudante o pasajero en carreras, pruebas o concursos de seguridad, resistencia o velocidad en vehículos de cualquier tipo
+8.	Tratamientos contra el alcoholismo, otras toxicomanías y sus complicaciones
+9.	Lesiones o enfermedades producidas al Asegurado Titular o Asegurado Dependiente, derivadas de un accidente en el que el Asegurado haya resultado responsable directamente al encontrarse bajo los efectos del alcohol, o estupefacientes o psicotrópicos
+10.	Tratamientos e intervenciones quirúrgicas para reducir o aumentar de peso y/o moldear el cuerpo y sus complicaciones
+11.	Tratamientos e intervenciones quirúrgicas para corregir o evitar la calvicie y el acné y sus complicaciones
+12.	Cualquier tipo de tratamiento relacionado con hormonas para el crecimiento o similares, y sus complicaciones, independientemente de la causa de la prescripción
+13.	Tratamientos médicos o quirúrgicos para mejorar la apariencia mediante restauración plástica, corrección o eliminación de defectos de carácter estético y sus complicaciones
+14.	Cualquier tratamiento hormonal ó quirúrgico para el cambio de sexo total ó parcial, cualquier que sea su causa u origen, así como las complicaciones del mismo. Para efectos de esta exclusión, no se considera dentro de ella el hermafroditismo o la intersexualidad
+15.	Los tratamientos médicos o quirúrgicos contra la impotencia sexual, esterilidad y/o infertilidad, salvo que sean consecuencia directa de una enfermedad amparada o accidente cubierto
+16.	Tratamientos médicos o quirúrgicos para evitar o procurar la procreación y sus complicaciones
+17.	Curas de reposo, exámenes médicos generales, estudios de cualquier naturaleza para la comprobación del estado de salud, “check-ups”, incluyendo exámenes rutinarios de la vista y oídos
+18.	Tratamientos, terapias y estudios psiquiátricos y psicológicos de cualquier tipo, así como los relacionados con trastornos del sueño, de la conducta o del aprendizaje y el síndrome de fatiga crónica.
+19.	Medicamentos que no hayan sido aprobados por la Comisión Federal para Prevención de Riesgos Sanitarios (COFEPRIS) o su similar en cualquier otra parte del mundo, en el lugar en que se hubieran prescrito o brindado y aquéllos que, por su naturaleza, se consideren experimentales
+20.	Tratamientos quiroprácticos, de acupuntura, naturistas, micro bióticos, así como sus complicaciones
+21.	Cuidado podiátrico y sus complicaciones
+22.	Compra o renta de zapatos ortopédicos, plantillas y similares
+23.	Reposición de aparatos ortopédicos y prótesis por descuido o mal uso, así como aquellos que ya se utilizaban antes de la fecha de contratación de la póliza
+24.	Tratamientos médicos o quirúrgicos para corregir trastornos de refracción ocular y sus complicaciones
+25.	La adquisición de anteojos, lentes de contacto y aparatos auditivos externos
+26.	Tratamientos médicos o quirúrgicos de cualquier tipo si el paciente está infectado por el virus de la inmunodeficiencia humano (VIH) y sus complicaciones, salvo lo dispuesto en la sección de Gastos Médicos Cubiertos con Período de Espera
+27.	Cámara Hiperbárica, excepto cuando sea Medicamente Necesaria, prescrita por el Médico tratante y previa valoración de un médico en convenio con Prevem
+28.	Cualquier complicación derivada o que pueda surgir del tratamiento médico o quirúrgico de los padecimientos, lesiones, afecciones o intervenciones expresamente excluidas en la póliza
+29.	Siniestros en el extranjero, salvo Emergencia Médicas en el Extranjero de conformidad con lo establecido con la sección correspondiente
+30.	Lesiones que el Asegurado Titular o cualquiera de los Asegurados Dependientes sufra a consecuencia de la práctica profesional de cualquier deporte o actividad, así como la práctica de cualquier deporte o actividad que exponga, por irresponsabilidad, desconocimiento o por circunstancias agravantes, la vida y salud del asegurado
+31.	Adquisición de complejos vitamínicos y complementos alimenticios
+32.	Tratamientos de lesiones pigmentarias de la piel conocidas como lunares, nevus o acné
+33.	Cualquier padecimiento o enfermedad que contraigan el Asegurado Titular y/o los Asegurados Dependientes por visitar lugares donde exista alguna emergencia de tipo sanitaria o epidemiológica que haya sido declarada por la autoridad competente
+34.	Tratamientos médicos o quirúrgicos a consecuencia de aborto voluntario
+35.	Crio-preservación
+36.	Medicina alternativa
+37.	Hipnotismo
+38.	Cualquier servicio médico prestado por familiares directos del asegurado (padre, madre, cónyuge, concubino(a), hermano(a) o hijo(a)), ni el asegurado mismo
+39.	Tratamiento dental y de la mandíbula, salvo lo cubierto como consecuencia de un accidente
+40.	Enfermedades congénitas, salvo lo dispuesto en la sección Gastos Médicos Cubiertos, punto 10 “Atención Recién Nacidos y Síndromes, Enfermedades, Malformaciones o Defectos Físicos Congénitos” y en el punto 11 “Síndromes, Enfermedades, Malformaciones o Defectos Físicos Congénitos de Asegurados No Nacidos durante la vigencia de la póliza”
+</div>
+
+
+## 6.	Gastos Médicos Cubiertos con Periodos de Espera
+A partir de la fecha de inicio de vigencia, rehabilitación o alta de cada asegurado, según sea el caso, se cubrirán las siguientes enfermedades de acuerdo al período de espera que se indica a continuación.
+
+Periodo de espera de cinco (5) años:
+
+<div custom-style="Párrafo de lista">
+•	Virus de la Inmunodeficiencia Humana (VIH). No aplica reconocimiento de antigüedad
+</div>
+
+Periodo de espera de dos (2) años:
+
+<div custom-style="Párrafo de lista">
+•	Hemorroides
+•	Venas varicosas
+•	Padecimientos en amígdalas y adenoides
+•	Tratamiento médico o quirúrgico de cualquier estructura anatómica de la rodilla (salvo las fracturas óseas en esta región)
+•	Tratamientos de nariz y senos paranasales por enfermedad
+•	Hernias y eventraciones de disco
+•	Tratamiento médico o quirúrgico para corregir cifosis, lordosis o escoliosis y sus complicaciones
+•	Tratamiento médico o quirúrgico para corregir degeneraciones articulares de las falanges de los pies y sus complicaciones
+</div>
+
+Periodo de espera de un (1) año:
+
+<div custom-style="Párrafo de lista">
+•	Litiasis en vías biliares
+•	Litiasis en vesícula biliar
+•	Litiasis en vías urinarias
+•	Enfermedades ácido-pépticas
+•	Padecimientos en glándulas mamarias (incluye cáncer de seno)
+•	Trastornos del aparato reproductor femenino
+•	Hernias de todo tipo (excepto las hernias de disco)
+</div>
+
+Periodo de espera de un (1) mes:
+Todas las Enfermedades o padecimientos cubiertos presentados.
+
+Sin periodo de espera:
+Accidente cubierto o cualquier Emergencia Médica o Urgencia Real (de acuerdo con las definiciones previstas para tal efecto) siempre y cuando no sean preexistentes; de manera enunciativa más no limitativas se enumeran las siguientes:
+<div custom-style="Lista">
+•	Apendicitis aguda
+•	Infección intestinal bacteriana
+•	Intoxicación alimentaria
+•	Diarrea y Gastroenteritis de origen infeccioso
+•	Golpe de calor
+•	Politraumatizado
+•	Infarto al miocardio
+</div>
+
+## 7.	Edades de Aceptación
+7.1.	Edades de admisión: Para el titular y el cónyuge la edad máxima de aceptación es hasta los 64 años. Para los hijos del titular, no existe edad mínima de aceptación con un máximo de hasta 24 años de edad siempre y cuando se mantengan solteros, dependientes económicamente del titular y estudiando a tiempo completo.
+7.2.	Edades de cancelación: La edad de cancelación es 99 años o se encuentren fuera de los parámetros de la definición de colectividad para el titular o cónyuge; en el caso de los hijos, en el aniversario en el cual cumplan la edad de 25 años, comiencen a trabajar o contraigan matrimonio o dejen de tener los parámetros de la definición de colectividad, lo que ocurra primero.
+
+## 8.	Temporalidad del Plan
+8.1.	El plazo de los planes son anuales renovables.
+8.2.	El periodo base de pago de primas es anual.
+8.3.	Las formas de pago serán: anual, semestral, trimestral y mensual. Estas formas de pago implican un recargo establecido de acuerdo a la metodología que establecerá Prevem Seguros, para cobrar el interés que implica el pago fraccionado de las primas.
+
+
+## 9.	Canales de Distribución
+Canalizaremos los esfuerzos de comercialización por medio de agentes y corredores profesionales de seguros. 
+
+
+## 10.	Tipo de Seguro
+Ofreceremos este producto en la modalidad de Seguro Colectivo de Gastos Médicos.
+
+Pueden adquirir este producto colectividades con un fin licito, cuyo fin sea diferene a contratar polizas de seguro, que cuenten con un medio de pago unico 
+
+
+## 11.	Moneda
+Todas las operaciones economicas derivadas de este contrato las realizaremos en moneda nacional, en aquellos casos en que la prestación del servicio se realice con alguna otra moneda tomaremos el tipo de cambio correspondiente publicado por el banco de México.
+
+
+# II.	Bases Técnicas	
+## 1.		Hipótesis Demográficas
+
+A efectos de establecer la frecuencia y severidad de las reclamaciones, consideramos la experiencia de PREVEM en los ejercicios de septiembre de 2018 a septiembre de 2023, en el portafolio de seguro colectivo, agrupada en rangos quinquenales hasta la edad de 69 años y un ultimo rango de 70 y mas años, el detalle de esta información la presentamos en el ANEXO I
+
+
+
+```{python Lectura, echo=FALSE}
+BD = pd.read_csv('BaseRiesgos.csv',encoding='latin-1',low_memory=True,header=0)
+BDgpo = pd.pivot_table(BD,index=['Sexo','RangoEdad'],values=['Asegurados','SiniestrosNuevos','SiniestralidadOcurrida'],aggfunc='sum')
+BDgpo['Freq']=BDgpo['SiniestrosNuevos']/BDgpo['Asegurados']
+BDgpo['Sever']=BDgpo['SiniestralidadOcurrida']/BDgpo['SiniestrosNuevos']
+BDgpo = BDgpo.reset_index()
+```
+```{r  ANEXOI, echo=FALSE}
+ANEXOI<-py$BDgpo
+ft<-flextable(ANEXOI)
+ft<-set_caption(ft,caption="Detalle de expuestos y reclamaciones 2018-2023")
+ft<-add_footer_lines(ft,"Fuente  Experiencia PREVEM")
+autofit(ft)
+
+ftF <- ANEXOI[ANEXOI$Sexo=='Femenino',]
+ftF['Edad']<-c(2,7,12,17,22,27,32,37,42,47,52,57,62,67,85)
+ModF <- loess (Freq~Edad,data=ftF,span=.5)
+SevF <- loess (Sever~Edad,data=ftF,span=.5)
+ModFexp <- lm(log(Freq)~Edad,data=ftF)
+ModFReg <- lm(Freq~Edad,data=ftF)
+ModGLM <- glm
+PredExp <- predict(ModFexp)
+PreDF <- predict(ModF)
+PreSF <- predict(SevF)
+PreReg <- predict(ModFReg)
+plot(ftF$Freq-PreDF)
+Comp<-cbind(ftF$Freq,PreDF,exp(PredExp),PreReg)
+colnames(Comp)<-c("Base","LOESS","LMExp","LMReg")
+Prima <- PreDF * PreSF
+```
+```{r  ANEXOI, echo=FALSE}
+ANEXOI<-py$BDgpo
+ft<-flextable(ANEXOI)
+ft<-set_caption(ft,caption="Detalle de expuestos y reclamaciones 2018-2023")
+ft<-add_footer_lines(ft,"Fuente  Experiencia PREVEM")
+autofit(ft)
+
+ftF <- ANEXOI[ANEXOI$Sexo=='Femenino',]
+ftF['Edad']<-c(2,7,12,17,22,27,32,37,42,47,52,57,62,67,85)
+ModF <- loess(Freq~Edad,data=ftF,span=.5)
+PreDF <- predict(ModF)
+plot(ftF$Freq-PreDF)
+
+```
+```{r, echo=FALSE}
+ft<-flextable(py$BDgpo)
+ft<-set_caption(ft,caption="Prueba")
+ft<-add_footer_lines(ft,"Fuente  Experiencia PREVEM")
+autofit(ft)
+```
+
+
+### Severidad
+Consideramos la experiencia de siniestralidad de la empresa para la operación de seguro colectivo en los ejercicios 2011 -2023
+
+
+### Frecuencia
+Consideramos la experiencia 
+
+## 2.		Hipótesis Financieras	
+
+## 3.		Principios y Procedimientos Técnicos para evitar fenómenos de selección adversa	
+
+# III. Prima de Riesgo	
+
+## 1.	Prima de Riesgo Pivote―Gastos Médicos Mayores	
+
+## 2.	Prima de Riesgo por Edad y Sexo―Gastos Médicos Mayores	
+
+## 3	Prima de Riesgo Plan Base―Gastos Médicos Mayores	
+
+## 4.	Prima de Riesgo por Edad y Sexo―Indemnización Diaria por Hospitalización	
+
+## 5	Prima de Riesgo Plan Base―Indemnización Diaria por Hospitalización	
+
+## 6.	Tarifa de Riesgo―Dental Prevem	
+
+## 7.	Tarifa de Riesgo―Dental Prevem Dinámico	
+
+## 8.	Tarifa de Riesgo―Servicios de Asistencia en Viaje	
+
+## 9.	Extra Primas y Descuentos	
+		
+# IV.	Prima de Tarifa	
+		
+# V.	Recargos y Descuentos a la Prima de Tarifa	
+		
+# VI.	Reservas	
+		
+# VII.	Dividendos	
+		
+# VIII.	Valores Garantizados	
+
+
+
+```{python, include=FALSE}
+hoy = datetime.today()
+LimiteCatastrofico = 1200000  # Es el limite para considerar una reclamación catastrofica
+NombreLibro = "SinOcuPag{}{:0>2}{:0>2}{:0>2}{:0>2}.xls".format(str(hoy.year)[2:4],hoy.month,hoy.day,hoy.hour,hoy.minute)
+LibroSalida = pd.ExcelWriter(NombreLibro,engine='xlsxwriter')
+Libro = LibroSalida.book
+NumFormato = Libro.add_format({'num_format':'#,##0'})
+TituloFormato = Libro.add_format({ 'font_size': 14,
+                                   'font_name': 'Arial',
+                                   'bold': True,
+                                   'align': 'center'})
+ContenidoNom = []
+ContenidoSub = []
+Contenido =pd.DataFrame(list(zip(ContenidoNom,ContenidoSub)),columns=(['Hoja','Contenido']))
+Contenido.to_excel(LibroSalida,sheet_name='Contenido',startrow=10)
+
+
+
+# A la base historica hay que cambiar los nombres de las columnas, quitar todos los acentos, el formato numerico no debe
+# contener comas, hay que eliminar todos todos los titulos a excepción del renglon uno que debe contener el
+# nombre de las columnas
+
+def GeneraHoja(Tabla,Hoja,Titulo):
+    Tabla.to_excel(LibroSalida,sheet_name=Hoja,startrow=10)
+    GHoja = LibroSalida.sheets[Hoja]
+    GHoja.write_url('A1','internal:Contenido!A1')
+    GHoja.set_column('A:O',10,NumFormato)
+    GHoja.merge_range('A4:G4',Titulo,TituloFormato)
+    ContenidoNom.append(Hoja)
+    ContenidoSub.append(Titulo)
+
+"""def FormatoSiniestro(Sin):
+    Val = Sin.find("-")
+    NvoForm="SGMI-00000"
+    if Val>0:
+        NvoForm =Sin[0:Val+1]+(f'{int(Sin[Val+1:len(Sin)]):05d}')
+    return(NvoForm)
+"""
+
+def Indice():
+    GHoja = LibroSalida.sheets['Contenido']
+    Tit = "Analisis de siniestralidad {:0>2}/{:0>2}/{}".format(hoy.day,hoy.month,hoy.year)
+    GHoja.merge_range('B2:C2',Tit,TituloFormato)
+    GHoja.set_column('B:B',20)
+    GHoja.set_column('C:C',45)
+    for i,con in enumerate(ContenidoNom):
+        celda = 'B'+str(i+12)
+        Liga = 'internal:%s!A1'%con
+        GHoja.write_url(celda,Liga)
+        celda = 'C'+str(i+12)
+        GHoja.write(celda,ContenidoSub[i])
+
+# Lee el archivo de siniestralidad historica
+
+Inflacion = {2011: 4.432319709, 2012: 3.97659465,2013: 3.570921834,2014: 3.187317378, 2015: 2.839676619, 2016: 2.553742265, 2017: 2.232567103, 2018 : 1.942862942, 2019 : 1.695747701, 2020: 1.50110809 , 2021: 1.32112387, 2022: 1.166171695,2023: 1.0000}
+
+
+BH = pd.read_csv('BD_Siniestros_2011_a_202305.csv',encoding='latin-1',low_memory=True,header=0)
+BH['RVA'] = BH.ESTIMACION+BH['AJUSTE POSITIVO']-BH['AJUSTE NEGATIVO']-BH.DEDUCIBLE-BH.COASEGURO
+BH = BH[BH.RVA >0]
+BH['Sexo']=BH['Sexo'].replace('MASCULINO','Masculino')
+BH['Sexo']=BH['Sexo'].replace('FEMENINO','Femenino')
+BH['Estado']=BH['Estado'].replace('AGUASCALIENTES','Aguascalientes')
+BH['Estado']=BH['Estado'].replace(['Ciudad De M?xico','Ciudad de M?xico'],'CdMx')
+BH['Estado']=BH['Estado'].replace(['Michoacÿn De Ocampo','Michoacÿn de Ocampo'],'Michoacan')
+BH['Estado']=BH['Estado'].replace(['Coahuila de Zaragoza','Coahuila De Zaragoza'],'Coahuila')
+BH['Estado']=BH['Estado'].replace(['Veracruz De Ignacio De La Llave','Veracruz de Ignacio de la Llave'],'Veracruz')
+
+BH['Estado']=BH['Estado'].replace(['Colombia','Colorado','ESTADOS UNIDOS DE AMERICA','Ecuador','Florida','California','Georgia','Illinois','Italia','Texas','Washington','Virginia'],'Extranjero')
+
+BH['FECHAREGISTRO'] = pd.to_datetime(BH['FECHAREGISTRO'],format='%d/%m/%Y')
+BH['FECHAOCURRIDO'] = pd.to_datetime(BH['FECHAOCURRIDO'],format='%d/%m/%Y')
+BH['Mreg'] = BH['FECHAREGISTRO'].dt.month
+BH['Areg'] = BH['FECHAREGISTRO'].dt.year
+BH['Mocu'] = BH['FECHAOCURRIDO'].dt.month
+BH['Aocu'] = BH['FECHAOCURRIDO'].dt.year
+
+# Calculate the sum of columns by grouping Areg and SINIESTRO
+BDSin = BH.groupby(['Areg', 'SINIESTRO']).agg({
+    'ESTIMACION': 'sum',
+    'AJUSTE POSITIVO': 'sum',
+    'AJUSTE NEGATIVO': 'sum',
+    'DEDUCIBLE': 'sum',
+    'COASEGURO': 'sum',
+    'PAGO': 'sum'
+}).reset_index()
+
+# Multiply the columns by inflation factor using vectorized operations
+
+columns_to_multiply = ['ESTIMACION', 'AJUSTE POSITIVO', 'AJUSTE NEGATIVO', 'DEDUCIBLE', 'COASEGURO', 'PAGO']
+BDSin[columns_to_multiply] = BDSin.apply(lambda row: row[columns_to_multiply] * Inflacion[row['Areg']], axis=1)
+
+# Selecciona los siniestros de Gastos Medicos GMM
+
+BDSinCol  = BH.loc[BH['SUBRAMO'] == 'GASTOS MEDICOS MAYORES COLECTIVO']
+BDSinInd  = BH.loc[BH['SUBRAMO'] == 'GASTOS MEDICOS MAYORES INDIVIDUAL']
+
+ColFirst = ['Sexo','Edad','Estado']
+BaseSinCol = BDSinCol.groupby(['Areg','SINIESTRO']).agg({**{col: ['sum'] for col in ['ESTIMACION','AJUSTE POSITIVO','AJUSTE NEGATIVO','DEDUCIBLE','COASEGURO','PAGO']},
+                                        **{col: ['first'] for col in ColFirst}})
+BaseSinCol.reset_index(inplace=True)
+BaseSinCol.columns=['Areg', 'SINIESTRO','ESTIMACION', 'AJUSTE POSITIVO', 'AJUSTE NEGATIVO', 'DEDUCIBLE', 'COASEGURO', 'PAGO','Sexo','Edad','Estado']
+
+ColAgrup = BaseSinCol
+ColAgrup[columns_to_multiply] = BaseSinCol.apply(lambda row: row[columns_to_multiply] * Inflacion[row['Areg']], axis=1)
+
+# incluir un campo on la rva = Estimacion inicial + ajuste positivo - ajuste negativo - deducible - coaseguro
+# determinar media y desv estandar  de la rva, limite = media Rva + 1.64....Desv Rva
+# en un campo complementario generar la  rva ajustada  = si el monto de la rva es menor a Media +1.64...*desv, monto sino el limite
+
+#Agregamos para la Reserva
+ColAgrup['Reserva'] = ColAgrup['ESTIMACION']+ColAgrup['AJUSTE POSITIVO']-ColAgrup['AJUSTE NEGATIVO']-ColAgrup['DEDUCIBLE']-ColAgrup['COASEGURO']
+#Calculamos media, desviación estandar y límite para la Reserva
+media = ColAgrup.Reserva.mean()
+dsv_std = ColAgrup.Reserva.std(ddof=0)
+limite = media + stats.norm.ppf(0.95)*dsv_std
+#Calculamos la Reserva ajustada
+ColAgrup['RVAjustada'] = ColAgrup['Reserva'].apply(lambda x: x if x < limite else limite)
+
+
+
+
+WBHpivot = pd.pivot_table(ColAgrup,index=['Sexo','Edad'],values=['Reserva','RVAjustada'],aggfunc=['sum','std','mean','size'])
+WBHpivot.reset_index(inplace=True)
+GeneraHoja(WBHpivot,"SexoEdad","Por edad y sexo")
+
+WBHpivot = pd.pivot_table(ColAgrup,index=['Estado'],values=['Reserva','RVAjustada'],aggfunc=['sum','std','mean','size'])
+
+WBHpivot.reset_index(inplace=True)
+WBHpivot[('mean','percentil')]=pd.qcut(WBHpivot[('mean','RVAjustada')],q=[0,.2,.4,.6,.8,1],labels=['1','2','3','4','5'])
+Uno = pd.DataFrame({"Estado":WBHpivot[('Estado','')],"Categoria":WBHpivot[('mean','percentil')]})
+ColAgrup=ColAgrup.merge(Uno,how='left',on='Estado')
+GeneraHoja(WBHpivot,"Estado","Por estado")
+
+WBHpivot = pd.pivot_table(ColAgrup,index=['Categoria'],values=['Reserva','RVAjustada'],aggfunc=['sum','std','mean','size'])
+WBHpivot.reset_index(inplace=True)
+GeneraHoja(WBHpivot,"Categoria","Agrupada por categoria de percentil")
+
+GeneraHoja(ColAgrup,"Detalle","Detalle de la base de datos")
+
+
+Indice()
+LibroSalida.close()
+```
+
+```{python, echo=FALSE}
+print(WBHpivot)
+```
+
+```{r  ANEXOI, echo=FALSE}
+ANEXOI<-py$BDgpo
+ft<-flextable(ANEXOI)
+ft<-set_caption(ft,caption="Detalle de expuestos y reclamaciones 2018-2023")
+ft<-add_footer_lines(ft,"Fuente  Experiencia PREVEM")
+autofit(ft)
+
