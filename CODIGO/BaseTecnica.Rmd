@@ -6,7 +6,7 @@ author: "Martin Quezada"
 date: "Noviembre 2023"
 output: 
    word_document:
-      reference_docx: estilos.docx
+     reference_docx: Estilos.docx
 editor_options: 
   markdown: 
     wrap: 72
@@ -113,61 +113,66 @@ Los gastos médicos cubiertos son:
 
 ### 1. Hospitalización
 
-a)  Habitación privada en cuarto estándar con alimentos, exceptuándose
-    Emergencias Médicas en el Extranjero en las que sólo se cubre una
-    habitación semi-privada
-b)  Cama extra para un acompañante del Asegurado, exceptuándose
-    Emergencias Médicas en el Extranjero
-c)  Sala de operaciones, de terapia intensiva, intermedia, unidad de
-    cuidados coronarios, de recuperación o de curaciones
-d)  Sala o cuarto de emergencia dentro de las 72 horas después de haber
-    ocurrido un Accidente o Emergencia Médica
-e)  Gastos originados por consumo de oxígeno, aplicación de soluciones
-    intravenosas e inyecciones, transfusiones de sangre, aplicación de
-    plasma o sueros, hemodiálisis y otras substancias semejantes
-    indispensables para el tratamiento de una Enfermedad o Accidente
-    cubiertos, así como las pruebas de compatibilidad que correspondan
-    al número de donaciones que reciba el Asegurado
+  a.  Habitación privada en cuarto estándar con alimentos, exceptuándose
+      Emergencias Médicas en el Extranjero en las que sólo se cubre una
+      habitación semi-privada.
+      
+  b.  Cama extra para un acompañante del Asegurado, exceptuándose
+      Emergencias Médicas en el Extranjero.
+      
+  c.  Sala de operaciones, de terapia intensiva, intermedia, unidad de
+      cuidados coronarios, de recuperación o de curaciones.
+      
+  d.  Sala o cuarto de emergencia dentro de las 72 horas después de haber
+      ocurrido un Accidente o Emergencia Médica.
+      
+  e.  Gastos originados por consumo de oxígeno, aplicación de soluciones
+      intravenosas e inyecciones, transfusiones de sangre, aplicación de
+      plasma o sueros, hemodiálisis y otras substancias semejantes
+      indispensables para el tratamiento de una Enfermedad o Accidente
+      cubiertos, así como las pruebas de compatibilidad que correspondan
+      al número de donaciones que reciba el Asegurado
 
 ### 2. Honorarios Médicos
 
-a)  Honorarios médicos Los honorarios médicos y quirúrgicos de
-    cirujanos, anestesiólogos, ayudantes y cualquier otro médico
-    especialista interconsultante y justificado. Los montos máximos se
-    calculan de la siguiente manera:
+  a.  Honorarios médicos Los honorarios médicos y quirúrgicos de
+      cirujanos, anestesiólogos, ayudantes y cualquier otro médico
+      especialista interconsultante y justificado. Los montos máximos se
+      calculan de la siguiente manera:
 
-<!-- -->
+  b.  Honorarios médicos y quirúrgicos de cirujanos el 100% del monto
+      máximo establecido por el procedimiento correspondiente en el
+      Tabulador de Honorarios Médicos y Quirúrgicos
 
-1)  Honorarios médicos y quirúrgicos de cirujanos el 100% del monto
-    máximo establecido por el procedimiento correspondiente en el
-    Tabulador de Honorarios Médicos y Quirúrgicos
-2)  Anestesiólogos con un límite máximo de hasta un 30 %, referenciado a
-    los honorarios del cirujano
-3)  Primer ayudante, cuyos servicios son Médicamente Necesarios y en
-    caso de ser justificado por el tipo de procedimiento efectuado, con
-    un límite máximo del 20% referenciado a los honorarios del cirujano
-4)  Segundo ayudante cuando sea Médicamente Necesario y en caso de ser
-    justificado por el tipo de procedimiento efectuado, con un límite
-    máximo de hasta 10% de los honorarios del cirujano Para honorarios
-    médicos y quirúrgicos incurridos como consecuencia de una Emergencia
-    Médica en el Extranjero, se cubre con base en el Gasto Usual,
-    Razonable y Acostumbrado, aplicando el deducible y suma asegurada
-    estipulados en la carátula de la póliza para la cobertura de
-    Emergencia Médica en el Extranjero.
+  c.  Anestesiólogos con un límite máximo de hasta un 30 %, referenciado a
+      los honorarios del cirujano
+  
+  d.  Primer ayudante, cuyos servicios son Médicamente Necesarios y en
+      caso de ser justificado por el tipo de procedimiento efectuado, con
+      un límite máximo del 20% referenciado a los honorarios del cirujano
 
-<!-- -->
+  e.  Segundo ayudante cuando sea Médicamente Necesario y en caso de ser
+      justificado por el tipo de procedimiento efectuado, con un límite
+      máximo de hasta 10% de los honorarios del cirujano Para honorarios
+      médicos y quirúrgicos incurridos como consecuencia de una Emergencia
+      Médica en el Extranjero, se cubre con base en el Gasto Usual,
+      Razonable y Acostumbrado, aplicando el deducible y suma asegurada
+      estipulados en la carátula de la póliza para la cobertura de
+      Emergencia Médica en el Extranjero.
 
-b)  Honorarios de enfermeras de cuidados especiales legalmente
-    autorizadas para ejercer su profesión, siempre y cuando dichos
-    cuidados especiales sean prescritos por el médico tratante, sean
-    necesarios para la convalecencia domiciliaria del Asegurado, y en
-    base al Tabulador de Honorarios Médicos y Quirúrgicos y por turnos
-    de 8, 12 y 24 horas por 30 días con límite máximo de 720 horas.
-c)  La primera consulta médica post-operatoria se considerará incluida
-    dentro de los honorarios médicos de la intervención quirúrgica.
-d)  Visitas y consultas médicas en el hospital, consultorio o en el
-    domicilio del Asegurado siempre que sean indicadas por el médico
-    tratante.
+  f.  Honorarios de enfermeras de cuidados especiales legalmente
+      autorizadas para ejercer su profesión, siempre y cuando dichos
+      cuidados especiales sean prescritos por el médico tratante, sean
+      necesarios para la convalecencia domiciliaria del Asegurado, y en
+      base al Tabulador de Honorarios Médicos y Quirúrgicos y por turnos
+      de 8, 12 y 24 horas por 30 días con límite máximo de 720 horas.
+  
+  g.  La primera consulta médica post-operatoria se considerará incluida
+      dentro de los honorarios médicos de la intervención quirúrgica.
+
+  h.  Visitas y consultas médicas en el hospital, consultorio o en el
+      domicilio del Asegurado siempre que sean indicadas por el médico
+      tratante.
 
 ### 3. Medicamentos
 
@@ -183,14 +188,14 @@ un millon de dolares
 
 ### 4. Servicios auxiliares de diagnóstico
 
-a)  Exámenes de diagnóstico de laboratorio, gabinete e imagenología,
-    incluyendo diagnóstico de Rayos X, electrocardiogramas, isótopos
-    radioactivos, electroencefalogramas o de cualesquiera otros
-    indispensables para el diagnóstico, tratamiento de un Accidente o
-    Enfermedad cubiertos. Estos servicios se cubrirán siempre y cuando
-    exista un diagnóstico médico cubierto y hasta él alta médica
-b)  Exámenes de alergias prescritos por el médico tratante por escrito,
-    con un diagnóstico definitivo
+  a.  Exámenes de diagnóstico de laboratorio, gabinete e imagenología,
+      incluyendo diagnóstico de Rayos X, electrocardiogramas, isótopos
+      radioactivos, electroencefalogramas o de cualesquiera otros
+      indispensables para el diagnóstico, tratamiento de un Accidente o
+      Enfermedad cubiertos. Estos servicios se cubrirán siempre y cuando
+      exista un diagnóstico médico cubierto y hasta él alta médica
+  b.  Exámenes de alergias prescritos por el médico tratante por escrito,
+      con un diagnóstico definitivo
 
 ### 5. Renta de Equipo de Hospital
 
@@ -201,56 +206,52 @@ sea prescrito por el Médico Tratante.
 
 ### 6. Terapia y rehabilitación
 
-a)  Terapia radioactiva y quimioterapia, fisioterapia y otros semejantes
-    que sean Medicamente Necesarios para el diagnóstico o tratamiento de
-    Accidente ó Enfermedad Cubierta por esta póliza, siempre y cuando
-    sean prescritos por el médico tratante y no sean de tipo
-    experimental o en fase de investigación
-b)  Hidroterapia e Inhaloterapia siempre que sean Médicamente Necesarios
-    para el tratamiento de un Accidente o Enfermedad Cubierta y que sean
-    prescritos por el médico tratante
+  a.  Terapia radioactiva y quimioterapia, fisioterapia y otros semejantes
+      que sean Medicamente Necesarios para el diagnóstico o tratamiento de
+      Accidente ó Enfermedad Cubierta por esta póliza, siempre y cuando
+      sean prescritos por el médico tratante y no sean de tipo
+      experimental o en fase de investigación
+      
+  b.  Hidroterapia e Inhaloterapia siempre que sean Médicamente Necesarios
+      para el tratamiento de un Accidente o Enfermedad Cubierta y que sean
+      prescritos por el médico tratante.
 
 ### 7. Servicio de ambulancia
 
-a)  Servicio de ambulancia de traslado terrestre dentro del territorio
-    nacional por cualquier emergencia médica cubierta y facilidades
-    quirúrgicas ambulatorias. Se cubren traslados no urgentes del
-    domicilio al centro de atención y traslados del hospital al
-    domicilio sólo si son médicamente necesarios previa autorización por
-    escrito de Prevem Seguros.
-b)  Ambulancia aérea y cuidados médicos para traslado al hospital más
-    cercano dentro del territorio nacional por motivo de una Emergencia
-    Médica producida por una Enfermedad o Accidente Cubierto y cuando no
-    se cuente con los recursos médicos ni hospitalarios para la atención
-    en el lugar donde se presentó dicha urgencia. El límite máximo por
-    este beneficio será el indicado en la carátula de la póliza, por
-    año-contrato para cada Asegurado, aplicando invariablemente un
-    coaseguro del 10% aun utilizando los Proveedores Afiliados y,
-    siempre y cuando se cumpla con lo siguiente:
+  a.  Servicio de ambulancia de traslado terrestre dentro del territorio
+      nacional por cualquier emergencia médica cubierta y facilidades
+      quirúrgicas ambulatorias. Se cubren traslados no urgentes del
+      domicilio al centro de atención y traslados del hospital al
+      domicilio sólo si son médicamente necesarios previa autorización por
+      escrito de Prevem Seguros.
+     
+  b.  Ambulancia aérea y cuidados médicos para traslado al hospital más
+      cercano dentro del territorio nacional por motivo de una Emergencia
+      Médica producida por una Enfermedad o Accidente Cubierto y cuando no
+      se cuente con los recursos médicos ni hospitalarios para la atención
+      en el lugar donde se presentó dicha urgencia. El límite máximo por
+      este beneficio será el indicado en la carátula de la póliza, por
+      año-contrato para cada Asegurado, aplicando invariablemente un
+      coaseguro del 10% aun utilizando los Proveedores Afiliados y,
+      siempre y cuando se cumpla con lo siguiente:
 
-<!-- -->
-
-1.  La transportación se realice en un avión legalmente autorizado, que
-    cuenta con el equipo e instrumentos médicos especiales a bordo, cuya
-    tripulación es especializada en transportes médicos y cuyo operador
-    es una compañía legalmente reconocida como operador de ambulancias
-    aéreas
-2.  El Asegurado muestre síntomas de Enfermedades o Accidentes cubiertos
-    bajo el contrato
-3.  La condición médica del Asegurado no le permita viajar en una
-    aerolínea regular de pasajeros
+    1. La transportación se realice en un avión legalmente autorizado, que
+           cuenta con el equipo e instrumentos médicos especiales a bordo, cuya
+           tripulación es especializada en transportes médicos y cuyo operador
+           es una compañía legalmente reconocida como operador de ambulancias
+           aéreas.
+    
+    2.    El Asegurado muestre síntomas de Enfermedades o Accidentes cubiertos bajo el
+           contrato.
+  
+    3.    La condición médica del Asegurado no le permita viajar en una aerolínea regular
+           de pasajeros.
 
 ### 8. Maternidad
 
-Gastos por maternidad limitado a Parto Normal u operación Cesárea hasta
-el límite máximo establecido en la carátula de la pólizade \$31,000 MXP
-por Asegurado por evento. En ambos casos, aplica un periodo de espera de
-10 meses con Prevem Seguros y no aplica Deducible ni Coaseguro. Serán
-elegibles para esta cobertura aquellas mujeres titulares, cónyuge o
-concubinas del titular entre los 18 y 44 años de edad, que son
-Aseguradas bajo este Contrato, de acuerdo a la definición de
-Colectividad asegurada, y que cumplan con el periodo de espera
-establecido para esta cobertura. EXCLUSIONES ESPECÍFICAS PARA MATERNIDAD
+Gastos por maternidad limitado a Parto Normal u operación Cesárea hasta el límite máximo establecido en la carátula de la póliza de $31,000 MXP por asegurado por evento. En ambos casos, aplica un periodo de espera de 10 meses con Prevem Seguros y no aplica Deducible ni Coaseguro. Serán elegibles para esta cobertura aquellas mujeres titulares, cónyuge o concubinas del titular entre los 18 y 44 años de edad, que son aseguradas bajo este Contrato, de acuerdo a la definición de Colectividad asegurada, y que cumplan con el periodo de espera establecido para esta cobertura.
+
+EXCLUSIONES ESPECÍFICAS PARA MATERNIDAD
 1.- Afecciones propias del embarazo y del parto (como por ejemplo,
 sangrados por vía vaginal, reposos prescritos por el médico durante el
 período de gestación o la sintomatología propia y tradicional del
@@ -939,14 +940,14 @@ rango de 70 y mas años, el detalle de esta información la presentamos en
 el ANEXO I
 
 ```{python Lectura, echo=FALSE}
-BD = pd.read_csv('BaseRiesgos.csv',encoding='latin-1',low_memory=True,header=0)
+BD = pd.read_csv("C:/Users/pserranor/OneDrive - PREVEM SEGUROS S.A. DE C.V/Documentos/CÓDIGO_Base_Tecnica/INSUMOS/BaseRiesgos.csv",encoding='latin-1',low_memory=True,header=0)
 BDgpo = pd.pivot_table(BD,index=['Sexo','RangoEdad'],values=['Asegurados','SiniestrosNuevos','SiniestralidadOcurrida'],aggfunc='sum')
 BDgpo['Freq']=BDgpo['SiniestrosNuevos']/BDgpo['Asegurados']
 BDgpo['Sever']=BDgpo['SiniestralidadOcurrida']/BDgpo['SiniestrosNuevos']
 BDgpo = BDgpo.reset_index()
 ```
 
-```{r  ANEXOI, echo=FALSE}
+```{r  ANEXO I, echo=FALSE}
 ANEXOI<-py$BDgpo
 ft<-flextable(ANEXOI)
 ft<-set_caption(ft,caption="Detalle de expuestos y reclamaciones 2018-2023")
@@ -1038,7 +1039,7 @@ Consideramos la experiencia
 ```{python, include=FALSE}
 hoy = datetime.today()
 LimiteCatastrofico = 1200000  # Es el limite para considerar una reclamación catastrofica
-NombreLibro = "SinOcuPag{}{:0>2}{:0>2}{:0>2}{:0>2}.xls".format(str(hoy.year)[2:4],hoy.month,hoy.day,hoy.hour,hoy.minute)
+NombreLibro = "C:/Users/pserranor/OneDrive - PREVEM SEGUROS S.A. DE C.V/Documentos/CÓDIGO_Base_Tecnica/SALIDAS/" + "SinOcuPag{}_{:0>2}_{:0>2}_{:0>2}.{:0>2}.xlsx".format(hoy.day,hoy.month,str(hoy.year)[2:4],hoy.hour,hoy.minute)
 LibroSalida = pd.ExcelWriter(NombreLibro,engine='xlsxwriter')
 Libro = LibroSalida.book
 NumFormato = Libro.add_format({'num_format':'#,##0'})
@@ -1066,13 +1067,6 @@ def GeneraHoja(Tabla,Hoja,Titulo):
     ContenidoNom.append(Hoja)
     ContenidoSub.append(Titulo)
 
-"""def FormatoSiniestro(Sin):
-    Val = Sin.find("-")
-    NvoForm="SGMI-00000"
-    if Val>0:
-        NvoForm =Sin[0:Val+1]+(f'{int(Sin[Val+1:len(Sin)]):05d}')
-    return(NvoForm)
-"""
 
 def Indice():
     GHoja = LibroSalida.sheets['Contenido']
@@ -1092,7 +1086,7 @@ def Indice():
 Inflacion = {2011: 4.432319709, 2012: 3.97659465,2013: 3.570921834,2014: 3.187317378, 2015: 2.839676619, 2016: 2.553742265, 2017: 2.232567103, 2018 : 1.942862942, 2019 : 1.695747701, 2020: 1.50110809 , 2021: 1.32112387, 2022: 1.166171695,2023: 1.0000}
 
 
-BH = pd.read_csv('BD_Siniestros_2011_a_202305.csv',encoding='latin-1',low_memory=True,header=0)
+BH = pd.read_csv("C:/Users/pserranor/OneDrive - PREVEM SEGUROS S.A. DE C.V/Documentos/CÓDIGO_Base_Tecnica/INSUMOS/BD_Siniestros_2011_a_202305.csv",encoding='latin-1',low_memory=True,header=0)
 BH['RVA'] = BH.ESTIMACION+BH['AJUSTE POSITIVO']-BH['AJUSTE NEGATIVO']-BH.DEDUCIBLE-BH.COASEGURO
 BH = BH[BH.RVA >0]
 BH['Sexo']=BH['Sexo'].replace('MASCULINO','Masculino')
@@ -1184,7 +1178,3 @@ LibroSalida.close()
 print(WBHpivot)
 ```
 
-\`\`\`{r ANEXOI, echo=FALSE} ANEXOI\<-py\$BDgpo ft\<-flextable(ANEXOI)
-ft\<-set_caption(ft,caption="Detalle de expuestos y reclamaciones
-2018-2023") ft\<-add_footer_lines(ft,"Fuente Experiencia PREVEM")
-autofit(ft)

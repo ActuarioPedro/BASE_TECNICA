@@ -1,0 +1,17 @@
+<!-- -->
+<!-- -->
+
+
+---
+title: Nota Técnica  <br>  
+       Seguro Colectivo de Gastos Médicos <br>
+       Bienestar Empresarial   <br>
+author: "Martin Quezada"
+date: "Noviembre 2023"
+output: 
+   word_document:
+      reference_docx: Estilos.docx
+editor_options: 
+  markdown: 
+    wrap: 72
+---
